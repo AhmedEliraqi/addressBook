@@ -1,0 +1,25 @@
+<h1>Job Title Table</h1>
+<div class="container">
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th>
+          <button style="width: 150px;" type="button" class="btn btn-primary" (click)="createJobTitle()">Create Job Title</button>
+          <button type="button" class="btn btn-danger " routerLink="/mainService">Back</button>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let job of getJobTitle; let i =index">
+        <th scope="row" >{{i+1}}</th>
+        <td>{{job.name}}</td>
+        <td>
+          <button type="button" class="btn btn-secondary" (click)="editJobTitle(job.id)">Update</button>
+          <button type="button" class="btn btn-danger" (click)="deleteJobTitle(job.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

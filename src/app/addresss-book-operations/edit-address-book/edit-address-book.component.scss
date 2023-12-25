@@ -1,0 +1,39 @@
+.content {
+  padding-top: 10px;
+  font-size: 15px;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  width: 400px;
+  height: 400px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+input {
+  font-size: 12px;
+}
+
+
+
+
+button {
+  width: 80px;
+  height: 30px;
+  font-size: 12px;
+  margin: 5px;
+}
+
+input::placeholder {
+  font-size: 15px;
+
+}
+
+.required{
+  color: #B6B6B6;
+  font-size: smaller;
+}

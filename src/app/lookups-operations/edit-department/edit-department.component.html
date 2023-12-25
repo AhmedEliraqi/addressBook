@@ -1,0 +1,21 @@
+<div mat-dialog-title>
+  <h1>Update Department</h1>
+</div>
+<div class="dialog">
+  <form [formGroup]="department" (ngSubmit)="onSubmitt()" >
+    <div class="box-body">
+      <div class="form-group">
+        <label  for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter Name" formControlName="name">
+      </div>
+    </div>
+    <div class="box-footer">
+      <button style="margin-left: 100px;" type="submit" class="btn btn-primary">Save</button>
+      <button type="button" class="btn btn-danger" (click)="closeForm()">Cancel</button>
+    </div>
+  </form>
+
+</div>
+
+
+

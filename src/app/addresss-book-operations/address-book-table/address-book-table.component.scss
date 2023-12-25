@@ -1,0 +1,43 @@
+.container {
+font-size: 17px;
+width: 100%;
+
+text-align: center;
+}
+
+h1 {
+  text-align: center;
+  margin-right: 50px;
+  font-size: 39px;
+}
+
+th, td {
+  text-align: center!important;
+}
+
+td {
+  font-size: 15px;
+}
+
+button {
+  // width: 70px;
+  height: 30px;
+  margin: 2px;
+  font-size: 15px;
+}
+
+.bt {
+  float: right;
+  margin-right: 120px;
+  button {
+    width: 170px;
+  }
+}
+
+.filterByDate{
+  display: flex;
+}
+.outBtnGroup{
+margin-bottom: 10px;
+}
+

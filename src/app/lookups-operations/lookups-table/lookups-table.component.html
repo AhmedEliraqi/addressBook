@@ -1,0 +1,29 @@
+<h1>Department Table</h1>
+<div class="container">
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th>
+          <button style="width: 150px;" type="button" class="btn btn-primary" (click)="createDepartment()">Create Department</button>
+          <button type="button" class="btn btn-danger " routerLink="/mainService">Back</button>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dep of getDepartment; let i =index">
+        <th scope="row" >{{i+1}}</th>
+        <td>{{dep.name}}</td>
+        <td>
+          <button type="button" class="btn btn-secondary" (click)="editDepartment(dep.id)">Update</button>
+          <button type="button" class="btn btn-danger" (click)="deleteDepartment(dep.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+

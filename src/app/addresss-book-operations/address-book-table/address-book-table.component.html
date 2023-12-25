@@ -1,0 +1,99 @@
+
+<div class="container">
+<h1>Address Book Table</h1>
+<div class="row outBtnGroup">
+  <div class="col-md-4">
+<button type="button" class="btn btn-primary" routerLink="/CreateAddressBook">Create Address Book</button>
+<button type="button" class="btn btn-danger " routerLink="/mainService">Back</button>
+  </div>
+
+<div class="col-md-6">
+
+  <form (submit)="filterByDate()">
+
+    <div class="col-md-2">
+      <button class="btn btn-primary" type="button" (click)="reset()">Reset</button>
+    </div>
+
+    <div class="col-md-2">
+      <button class="btn btn-primary" [disabled]="!firstDate || !lastDate" type="submit">Filter by Date</button>
+    </div>
+
+    <div class="col-md-4 filterByDate">
+
+      <input
+      class="form-control"
+      placeholder="Enter Last Date"
+      [(ngModel)]="lastDate"
+      name="lastDate"
+      id="lastDate"
+      ngbDatepicker
+      #l="ngbDatepicker"
+    />
+    <button (click)="l.toggle()" type="button"><i class="fa fa-calendar"></i></button>
+    </div>
+
+    <div class="col-md-4 filterByDate">
+      <input
+      class="form-control"
+      placeholder="Enter First Date"
+      [(ngModel)]="firstDate"
+      name="firstDate"
+      id="firstDate"
+      ngbDatepicker
+      #f="ngbDatepicker"
+    />
+    <button  (click)="f.toggle()" type="button"><i class="fa fa-calendar"></i></button>
+
+    </div>
+
+  </form>
+</div>
+
+
+</div>
+
+  <table class="table table-striped"
+  *ngIf="getAddressBook.length"
+  datatable
+  [dtTrigger]="dtTrigger"
+  [dtOptions]="dtOptions"
+  data-ordering="false"
+
+ >
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Full Name</th>
+        <th scope="col">Job Title</th>
+        <th scope="col">Department</th>
+        <th scope="col">Mobile Number</th>
+        <th scope="col">Date of birth</th>
+        <th scope="col">Address</th>
+        <th scope="col">Email</th>
+        <th scope="col">age</th>
+        <th scope="col">Photo</th>
+        <th scope="col">Modify</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of getAddressBook; let i =index">
+        <td>{{i+1}}</td>
+        <td>{{book.fullName}}</td>
+        <td>{{book.jobTitle.name}}</td>
+        <td>{{book.department.name}}</td>
+        <td>{{book.mobileNumber}}</td>
+        <td>{{book.dateOfBirth | date:"yyyy-MM-dd"}}</td>
+        <td>{{book.address}}</td>
+        <td>{{book.email}}</td>
+        <td>{{book.age}}</td>
+        <td><button class="btn btn-primary" (click)="getPhoto(book.photoName)"> download Photo</button></td>
+        <td>
+          <button type="button" class="btn btn-secondary" (click)="editModal(book.id)">Update</button>
+          <button type="button" class="btn btn-danger" (click)="deletedEmployee(book.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

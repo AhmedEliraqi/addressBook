@@ -1,0 +1,38 @@
+.container {
+  direction: ltr;
+  font-size: 17px;
+  margin-top: 40px;
+}
+
+h1 {
+  text-align: left;
+  margin-top: 20px;
+  font-size: 25px;
+  margin-bottom: 20px;
+  font-weight: bolder;
+}
+
+input[type="text"], input[type="email"], input[type="file"], select {
+  text-align: left;
+  padding: 10px;
+  width: 20%;
+
+}
+
+label {
+  float: left;
+  margin-right: 15px;
+
+}
+
+button {
+  float: left;
+  width: 80px;
+  height: 30px;
+  font-size: 12px;
+}
+
+.required{
+  color: #B6B6B6;
+  font-size: smaller;
+}
